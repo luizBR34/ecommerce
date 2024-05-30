@@ -1,0 +1,29 @@
+<ion-alert
+  [isOpen]="isAlertOpen"
+  header="An Error Occurred!"
+  message="{{ msgError }}"
+  [buttons]="alertButtons"
+  (didDismiss)="onHandleError(false)"
+></ion-alert>
+<ion-list *ngIf="!isFetching">
+  <ion-grid>
+    <ion-row>
+      <ion-item *ngFor="let product of products">
+        <ion-col class="col-style" size-md="5" offset-md="5" text-center>
+          <ion-card class="example-card" color="light">
+            <ion-card-header>
+              <ion-card-title>{{ product.productName }}</ion-card-title>
+              <ion-card-subtitle>{{
+                product.productPrice | currency
+              }}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-img [src]="product.productImageUrl"></ion-img>
+            <ion-card-content>
+              <p>{{ product.productDescription }}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-item>
+    </ion-row>
+  </ion-grid>
+</ion-list>

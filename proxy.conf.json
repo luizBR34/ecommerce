@@ -1,0 +1,11 @@
+{
+  "/products": {
+    "target": "https://19ktgss4w7.execute-api.sa-east-1.amazonaws.com/Prod",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/products": ""
+    }
+  }
+}
